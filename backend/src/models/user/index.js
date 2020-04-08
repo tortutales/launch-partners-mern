@@ -10,7 +10,7 @@ const { Schema } = mongoose;
  * User mongo schema
  */
 const UsersSchema = new Schema({
-    avatar: {
+    avatarUrl: {
         required: false,
         type: String
     },
