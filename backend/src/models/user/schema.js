@@ -19,7 +19,7 @@ const UsersSchema = new Schema({
         type: String
     },
     email: {
-        required: false,
+        required: true,
         type: String,
         unique: true
     },
@@ -31,9 +31,9 @@ const UsersSchema = new Schema({
         required: false,
         type: String
     },
-    username: {
-        required: false,
-        type: String,
+    userId: {
+        required: true,
+        type: Number,
         unique: true
     }
 });
