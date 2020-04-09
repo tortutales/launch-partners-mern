@@ -7,7 +7,7 @@ const express = require('express');
  * they are neccesary in the entire application
  */
 if (process.env.NODE_ENV !== 'production') {
-    dotenv.config({ path: './process.template.env' });
+    dotenv.config({ path: '.env' });
 }
 
 // @scripts
