@@ -17,7 +17,7 @@
   },
   "serviceMocker": {
     "delayResponse": 300,
-    "isEnabled": true,
+    "isEnabled": false,
     "loginEmail": "admin@launchpartners.com",
     "loginPassword": "MTIz",
     "passwordRecoveryCode": "MTIzNDU2"
