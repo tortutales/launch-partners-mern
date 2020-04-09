@@ -1,5 +1,6 @@
 // @scripts
 const { httpCodes } = require('../constants');
+const { responseSchema } = require('../utils');
 
 /**
  * Verify that every field is inside the body object
@@ -15,7 +16,14 @@ function ensurePayloadForm(requiredFields) {
             return;
         }
 
-        res.status(httpCodes.BAD_REQUEST).send({ message: 'Body must have all required fields' });
+        responseSchema({
+            data: { requiredFields },
+            error: true,
+            httpStatusCode: httpCodes.BAD_REQUEST,
+            message: 'Body must have all required fields',
+            res,
+            success: false
+        });
     };
 }
 
