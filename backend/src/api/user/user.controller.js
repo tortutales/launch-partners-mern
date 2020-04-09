@@ -1,21 +1,49 @@
 // @scripts
 const { httpCodes } = require('../../constants');
+const { responseSchema } = require('../../utils/res');
 const { userService } = require('../../services');
 
-function mainController(_req, res) {
-    return res.status(httpCodes.OK).json({ message: 'User endpoints' });
+async function getAllUsersController(_req, res) {
+    try {
+        const users = await userService.getAll();
+        responseSchema({
+            data: { users },
+            message: 'Users found succesfully',
+            res
+        });
+    } catch (error) {
+        responseSchema({
+            data: { users: [] },
+            error: true,
+            httpStatusCode: httpCodes.NOT_FOUND,
+            message: error.message,
+            res,
+            success: false
+        });
+    }
 }
 
 async function loginController(req, res) {
     try {
         const user = await userService.login(req.body);
-        res.status(httpCodes.OK).json({ message: 'User succesfully loggued', user });
+        responseSchema({
+            data: { user },
+            message: 'Users succesfully loggued',
+            res
+        });
     } catch (error) {
-        res.status(httpCodes.SERVER_ERROR).send({ message: error.message });
+        responseSchema({
+            data: { user: null },
+            error: true,
+            httpStatusCode: httpCodes.UNAUTHORIZED,
+            message: error.message,
+            res,
+            success: false
+        });
     }
 }
 
 module.exports = {
-    loginController,
-    mainController
+    getAllUsersController,
+    loginController
 };

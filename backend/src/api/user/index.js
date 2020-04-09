@@ -12,7 +12,7 @@ const router = express.Router();
 const verifyLoginFields = ensurePayloadForm(['email', 'password']);
 
 // @routes
-router.get('/', user.mainController);
+router.get('/', user.getAllUsersController);
 router.post('/login', verifyLoginFields, user.loginController);
 
 module.exports = router;

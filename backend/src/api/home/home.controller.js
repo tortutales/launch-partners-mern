@@ -1,10 +1,13 @@
 // @scripts
-const { httpCodes } = require('../../constants');
+const { responseSchema } = require('../../utils/res');
 
-function mainController(req, res) {
-    return res.status(httpCodes.OK).json({
-        message: 'LaunchPartners API',
-        version: '1.0.0'
+function mainController(_req, res) {
+    responseSchema({
+        data: {
+            version: '1.0.0'
+        },
+        message: 'LaunchPartner API',
+        res
     });
 }
 

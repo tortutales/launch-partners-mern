@@ -4,14 +4,13 @@ const bcrypt = require('bcrypt');
 // @scripts
 const { auth } = require('../utils');
 
-/**
- * Get object which will represent user interface to make database operations.
- * @param {Object} userModel
- */
-function buildUserService({ userModel } = {}) {
+// @models
+const { User } = require('../models');
+
+function buildUserService() {
     return {
         async login(user) {
-            const userInDB = await userModel.findOne({ email: user.email });
+            const userInDB = await User.findOne({ email: user.email });
 
             if (!userInDB) {
                 throw new Error("Either email or password doesn't exists");
@@ -29,6 +28,15 @@ function buildUserService({ userModel } = {}) {
                 user: userInDB,
                 token
             };
+        },
+        async getAll() {
+            const users = await User.find({});
+
+            if (!users.length) {
+                throw new Error('Not users found');
+            }
+
+            return users;
         }
     };
 }
