@@ -1,15 +1,15 @@
 // @packages
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { withStyles } from '@material-ui/core/styles';
 import { Grid, Button } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 
 // @scripts
-import CtrlSelectField from '../../controls/general-purpose/ctrl-select-field';
+import CtrlAvatarField from '../../controls/general-purpose/ctrl-avatar-field';
 import CtrlTextField from '../../controls/general-purpose/ctrl-text-field';
 import { config } from '../../config';
+import { globalUI } from '../../core';
 import { isAllPropsValid } from '../../util';
-import { initialState } from './state';
 
 // @styles
 import styles from './styles';
@@ -17,119 +17,195 @@ import styles from './styles';
 class SettingsPage extends PureComponent {
     constructor(props) {
         super(props);
-        this.state = initialState;
 
-        this.handleFieldOnChange = this.handleFieldOnChange.bind(this);
-        this.handleOnUpdateMyPassword = this.handleOnUpdateMyPassword.bind(this);
+        this.state = this.initialState;
+        this.handleOnFieldChange = this.handleOnFieldChange.bind(this);
+        this.handleOnPasswordChange = this.handleOnPasswordChange.bind(this);
+        this.handleOnSave = this.handleOnSave.bind(this);
+    }
+
+    get initialState() {
+        const {
+            avatarUrl,
+            description,
+            name,
+            userId
+        } = this.props.user;
+
+        return {
+            avatarUrl: {
+                isValid: true,
+                value: avatarUrl
+            },
+            checkPassword: {
+                isValid: true,
+                value: ''
+            },
+            description: {
+                isValid: true,
+                value: description
+            },
+            name: {
+                isValid: true,
+                value: name
+            },
+            password: {
+                isValid: true,
+                value: ''
+            },
+            userId: {
+                isValid: true,
+                value: userId
+            },
+            showErrors: false
+        };
     }
 
     get isFormValid() {
         return isAllPropsValid(this.state);
     }
 
-    handleFieldOnChange({ name, isValid, value }) {
-        this.setState({
-            [name]: {
-                isValid,
-                value
-            }
-        });
-    }
+    get user() {
+        const { state } = this;
 
-    handleOnUpdateMyPassword() {
-        const {
-            currentPassword,
-            newPassword
-        } = this.state;
-
-        const params = {
-            currentPassword: currentPassword.value,
-            newPassword: newPassword.value
+        const user = {
+            avatarUrl: state.avatarUrl.value,
+            description: state.description.value,
+            name: state.name.value,
+            password: state.password.value === ''
+                ? null
+                : state.password.value,
+            userId: state.userId.value
         };
 
-        if (this.isFormValid) {
-            this.props.userProps.onUpdateMyPassword(params)
-                .then(() => this.setState(initialState));
-        }
+        return user;
+    }
 
-        this.setState({ showErrors: true });
+    handleOnFieldChange({ isValid, name, value }) {
+        if (name === 'password') {
+            this.handleOnPasswordChange({ isValid, value });
+        } else {
+            this.setState({
+                [name]: {
+                    isValid,
+                    value
+                }
+            });
+        }
+    }
+
+    handleOnPasswordChange({ isValid, value }) {
+        this.setState(({ checkPassword }) => ({
+            password: {
+                isValid,
+                value
+            },
+            checkPassword: {
+                isValid: (value || '') === (checkPassword.value || ''),
+                value: checkPassword.value
+            }
+        }));
+    }
+
+    handleOnSave() {
+        if (this.isFormValid) {
+            this.props
+                .onUpdateUser(this.user)
+                .then(() => {
+                    globalUI.showToastNotificationSuccess(
+                        config.text.settingsPage.profileUpdated
+                    );
+                });
+        } else {
+            this.setState({ showErrors: true });
+        }
     }
 
     render() {
-        const {
-            classes,
-            languageProps
-        } = this.props;
+        const { classes } = this.props;
+        const { showErrors } = this.state;
 
         const {
-            confirmPassword,
-            currentPassword,
-            newPassword,
-            showErrors
+            avatarUrl,
+            checkPassword,
+            description,
+            name,
+            password
         } = this.state;
 
         return (
             <div id="setings-page" className={classes.settingsPage}>
-                <Grid container spacing={10}>
-                    <Grid className={classes.languageSelect} item xs={6}>
-                        <CtrlSelectField
-                            id="settings-page-language-select"
-                            itemValProp="code"
-                            items={languageProps.list}
-                            label={config.text.settingsPage.language}
-                            onChange={({ value }) => { languageProps.onChange(value); }}
-                            value={languageProps.value}
-                            variant="standard"
-                        />
-                    </Grid>
-                </Grid>
-                <Grid container spacing={10}>
+                <Grid container>
                     <Grid item xs={6}>
                         <CtrlTextField
-                            id="settings-page-current-password"
-                            label={config.text.settingsPage.currentPassword}
-                            name="currentPassword"
-                            onEnter={this.handleOnUpdateMyPassword}
-                            onChange={this.handleFieldOnChange}
+                            autoFocus
+                            id="settings-page-name"
+                            label={config.text.users.name}
+                            maxLength={100}
+                            minLength={3}
+                            name="name"
+                            onChange={this.handleOnFieldChange}
                             required
                             showErrors={showErrors}
-                            type="password"
-                            value={currentPassword.value}
+                            type="name"
+                            value={name.value}
                         />
                     </Grid>
                 </Grid>
-                <Grid container spacing={10}>
+                <Grid container>
                     <Grid item xs={6}>
                         <CtrlTextField
-                            id="settings-page-new-password"
-                            label={config.text.settingsPage.newPassword}
-                            name="newPassword"
-                            onEnter={this.handleOnUpdateMyPassword}
-                            onChange={this.handleFieldOnChange}
-                            required
+                            id="settings-page-description"
+                            label={config.text.users.description}
+                            maxLength={2000}
+                            name="description"
+                            onChange={this.handleOnFieldChange}
+                            rows={5}
                             showErrors={showErrors}
-                            type="password"
-                            value={newPassword.value}
+                            value={description.value}
+                        />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <CtrlAvatarField
+                            className={classes.bigAvatar}
+                            id="settings-page-avatar"
+                            maxSizeMb={3}
+                            name="avatarUrl"
+                            onChange={this.handleOnFieldChange}
+                            showErrors={showErrors}
+                            tooltip={config.text.users.changeAvatar}
+                            value={avatarUrl.value}
                         />
                     </Grid>
                 </Grid>
-                <Grid container spacing={10}>
+                <Grid container>
                     <Grid item xs={6}>
                         <CtrlTextField
-                            expectedValue={newPassword.value}
-                            id="settings-page-confirm-password"
-                            label={config.text.settingsPage.confirmPassword}
-                            name="confirmPassword"
-                            onChange={this.handleFieldOnChange}
-                            onEnter={this.handleOnUpdateMyPassword}
-                            required
+                            id="settings-page-password"
+                            label={config.text.users.password}
+                            name="password"
+                            onChange={this.handleOnFieldChange}
                             showErrors={showErrors}
                             type="password"
-                            value={confirmPassword.value}
+                            value={password.value}
                         />
                     </Grid>
                 </Grid>
-                <Grid container spacing={10}>
+                <Grid container>
+                    <Grid item xs={6}>
+                        <CtrlTextField
+                            expectedValue={password.value}
+                            id="settings-page-check-password"
+                            label={config.text.users.confirmPassword}
+                            name="checkPassword"
+                            onChange={this.handleOnFieldChange}
+                            showErrors={showErrors}
+                            type="password"
+                            value={checkPassword.value}
+                        />
+                    </Grid>
+                </Grid>
+                <Grid container>
                     <Grid
                         alignContent="flex-end"
                         alignItems="flex-end"
@@ -141,10 +217,10 @@ class SettingsPage extends PureComponent {
                         <Button
                             color="primary"
                             id="settings-page-update-password-button"
-                            onClick={this.handleOnUpdateMyPassword}
+                            onClick={this.handleOnSave}
                             variant="contained"
                         >
-                            {config.text.settingsPage.updatePassword}
+                            {config.text.common.save}
                         </Button>
                     </Grid>
                 </Grid>
@@ -155,17 +231,13 @@ class SettingsPage extends PureComponent {
 
 SettingsPage.propTypes = {
     classes: PropTypes.object.isRequired,
-    languageProps: PropTypes.shape({
-        list: PropTypes.arrayOf(PropTypes.shape({
-            description: PropTypes.string.isRequired,
-            code: PropTypes.string.isRequired
-        })).isRequired,
-        onChange: PropTypes.func.isRequired,
-        value: PropTypes.string.isRequired
+    user: PropTypes.shape({
+        avatarUrl: PropTypes.string,
+        description: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        userId: PropTypes.number.isRequired
     }).isRequired,
-    userProps: PropTypes.shape({
-        onUpdateMyPassword: PropTypes.func.isRequired
-    }).isRequired
+    onUpdateUser: PropTypes.func.isRequired
 };
 
 export default withStyles(styles)(SettingsPage);

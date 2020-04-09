@@ -27,7 +27,12 @@ class CtrlMenuItem extends PureComponent {
                 <ListItemIcon>
                     <Icon id={`${id}-icon`}>{icon}</Icon>
                 </ListItemIcon>
-                <ListItemText id={`${id}-label`} inset primary={text} />
+                <ListItemText
+                    id={`${id}-label`}
+                    inset
+                    primary={text}
+                    style={{ paddingLeft: 0 }}
+                />
             </MenuItem>
         );
     }

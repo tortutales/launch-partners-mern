@@ -2,7 +2,6 @@
 import WebFontLoader from 'webfontloader';
 
 // @scripts
-import { addActionOnWindowClose } from '../util';
 import { addAjaxInterceptors } from './ajax-interceptors';
 import { config } from '../config';
 import { constants } from './constants';
@@ -54,16 +53,6 @@ const loadFonts = (environment) => {
         });
     }
 };
-
-addActionOnWindowClose(() => {
-    const {
-        rememberMe
-    } = global.core.store.getState().user;
-
-    if (!rememberMe) {
-        global.core.globalUI.logout();
-    }
-});
 
 const initializeApp = () => {
     if (global.core) {

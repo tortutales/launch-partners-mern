@@ -5,23 +5,10 @@ import { decodeBase64String } from '../../util';
 import {
     LOGIN,
     LOGOUT,
-    REMEMBER_ME,
-    UPDATE_LANGUAGE,
     login,
     logout,
-    rememberMe,
-    updateLanguage
+    defaultPermissions
 } from '../../actions';
-
-test('rememberMe', () => {
-    const remember = true;
-    const actionCreator = rememberMe(remember);
-    const expectedActions = [{
-        type: REMEMBER_ME,
-        payload: remember
-    }];
-    return global.testDispatch(actionCreator, expectedActions);
-});
 
 test('login (http request success)', () => {
     const credentials = {
@@ -33,7 +20,9 @@ test('login (http request success)', () => {
     const actionCreator = login(credentials);
     const expectedActions = [{
         type: LOGIN,
-        payload: config.mockData.securityLoginSvcResponse
+        payload: Object.assign({}, config.mockData.securityLoginSvcResponse, {
+            permissions: defaultPermissions
+        })
     }];
     return global.testDispatch(actionCreator, expectedActions);
 });
@@ -56,22 +45,4 @@ test('logout', () => {
         type: LOGOUT
     }];
     return global.testDispatch(actionCreator, expectedActions);
-});
-
-test('updateLanguage (http request success)', () => {
-    const newLanguageCode = 'en';
-    const actionCreator = updateLanguage(newLanguageCode);
-    const expectedActions = [{
-        type: UPDATE_LANGUAGE,
-        payload: newLanguageCode
-    }];
-
-    return global.testDispatch(actionCreator, expectedActions);
-});
-
-test('updateLanguage (http request fails)', () => {
-    const newLanguageCode = 'en';
-    const actionCreator = updateLanguage(newLanguageCode);
-    const expectedActions = [];
-    return global.testDispatchWithNetworkError(actionCreator, expectedActions);
 });

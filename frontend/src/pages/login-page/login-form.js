@@ -9,7 +9,6 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
 // @scripts
-import CtrlCheckField from '../../controls/general-purpose/ctrl-check-field';
 import CtrlTextField from '../../controls/general-purpose/ctrl-text-field';
 import { config } from '../../config';
 
@@ -21,10 +20,7 @@ const CtrlLoginForm = ({
     id,
     onFieldChange,
     onLogin,
-    onRecoverPassword,
-    onRememberMe,
     passwordValue,
-    rememberMeValue,
     showErrors,
     userValue
 }) => (
@@ -68,22 +64,6 @@ const CtrlLoginForm = ({
                 value={passwordValue}
             />
             <div className={classes.formButtons}>
-                <div>
-                    <CtrlCheckField
-                        id={`${id}-remember-check`}
-                        label={config.text.loginPage.remember}
-                        name="remember"
-                        onChange={onRememberMe}
-                        value={rememberMeValue}
-                    />
-                    <Button
-                        color="primary"
-                        id={`${id}-recover-password-button`}
-                        onClick={onRecoverPassword}
-                    >
-                        {config.text.passwordRecovery.forgotYourPassword}
-                    </Button>
-                </div>
                 <Button
                     color="primary"
                     id={`${id}-continue-button`}
@@ -103,10 +83,7 @@ CtrlLoginForm.propTypes = {
     id: PropTypes.string.isRequired,
     onFieldChange: PropTypes.func.isRequired,
     onLogin: PropTypes.func.isRequired,
-    onRecoverPassword: PropTypes.func.isRequired,
-    onRememberMe: PropTypes.func.isRequired,
     passwordValue: PropTypes.string,
-    rememberMeValue: PropTypes.bool.isRequired,
     showErrors: PropTypes.bool.isRequired,
     userValue: PropTypes.string
 };

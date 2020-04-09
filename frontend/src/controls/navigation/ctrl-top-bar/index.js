@@ -14,7 +14,6 @@ import { withStyles } from '@material-ui/core/styles';
 import CtrlIconButton from '../../general-purpose/ctrl-icon-button';
 import CtrlProfileMenu from '../ctrl-profile-menu';
 import { config } from '../../../config';
-import { constants } from '../../../core';
 
 // @styles
 import styles from './styles';
@@ -90,7 +89,6 @@ const CtrlTopBar = ({
                     badgeContent={11}
                     icon="notifications"
                     id={`${id}-alerts`}
-                    permission={constants.permissions.topBar.ALERTS}
                     tooltip={config.text.topBar.alerts}
                     userPermissions={userPermissions}
                     visible={false}
@@ -107,7 +105,6 @@ const CtrlTopBar = ({
                     }}
                     icon="account_circle"
                     id={`${id}-profile`}
-                    permission={constants.permissions.topBar.PROFILE}
                     tooltip={config.text.topBar.profile}
                     userPermissions={userPermissions}
                 />

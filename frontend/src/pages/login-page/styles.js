@@ -30,26 +30,5 @@ export default theme => (Object.assign({}, globals(theme), {
     },
     formButtons: {
         textAlign: 'right'
-    },
-    recoverPasswordButton: {
-        margin: theme.spacing(1)
-    },
-    recoverPasswordButtons: {
-        marginTop: 'auto',
-        display: 'flex',
-        justifyContent: 'flex-end'
-    },
-    recoverPasswordForm: {
-        maxWidth: 400
-    },
-    recoverPasswordText: {
-        height: 100,
-        paddingBottom: 10,
-        paddingTop: 10
-    },
-    recoverPasswordVerificationCode: {
-        maxWidth: 200,
-        paddingLeft: 'auto',
-        paddingRight: 'auto'
     }
 }));

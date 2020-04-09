@@ -14,19 +14,5 @@ export const constants = {
         INFO: 'info',
         SUCCESS: 'success',
         WARNING: 'warning'
-    },
-
-    permissions: {
-        mainMenu: {
-            APP_SETTINGS: 'MainMenu.AppSettings',
-            HOME: 'MainMenu.Home'
-        },
-        profileMenu: {
-            SETTINGS: 'ProfileMenu.Settings'
-        },
-        topBar: {
-            ALERTS: 'TopBar.Alerts',
-            PROFILE: 'TopBar.Profile'
-        }
     }
 };
