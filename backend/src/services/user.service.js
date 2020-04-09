@@ -13,13 +13,13 @@ function buildUserService() {
             const userInDB = await User.findOne({ email: user.email });
 
             if (!userInDB) {
-                throw new Error("Either email or password doesn't exists");
+                throw new Error('Either email or password does not exists');
             }
 
             const hasSamePassword = await bcrypt.compare(user.password, userInDB.password);
 
             if (!hasSamePassword) {
-                throw new Error("Either email or password doesn't exists");
+                throw new Error('Either email or password does not exists');
             }
 
             const token = auth.generateJWToken(userInDB.toJSON());
