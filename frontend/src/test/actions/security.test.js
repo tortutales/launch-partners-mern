@@ -297,7 +297,7 @@ test('updateMyPassword (http request fails)', (done) => {
 });
 
 test('sendPasswordRecoveryCode (http request success)', (done) => {
-    const email = 'admin@bestwebfirms.com';
+    const email = 'admin@launchpartner.com';
     serviceMocker.replyWithMockData();
 
     return Promise.resolve(sendPasswordRecoveryCode(email))
@@ -305,7 +305,7 @@ test('sendPasswordRecoveryCode (http request success)', (done) => {
 });
 
 test('sendPasswordRecoveryCode (http request fails)', (done) => {
-    const email = 'admin@bestwebfirms.com';
+    const email = 'admin@launchpartner.com';
     serviceMocker.replyWithNetworkError();
 
     return Promise.resolve(sendPasswordRecoveryCode(email))

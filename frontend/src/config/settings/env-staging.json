@@ -1,9 +1,9 @@
 {
-  "appName": "BestWebFirms (staging)",
+  "appName": "launchpartner (staging)",
   "environment": {
     "name": "staging"
   },
   "services": {
-    "root": "https://svc-bestwebfirms-stg.celerik.com"
+    "root": "https://svc-launchpartner-stg.celerik.com"
   }
 }
