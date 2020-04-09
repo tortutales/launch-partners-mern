@@ -1,5 +1,5 @@
 {
-  "appName": "launchpartner (production)",
+  "appName": "Launch Partners (production)",
   "environment": {
     "name": "production"
   },
@@ -7,6 +7,6 @@
     "isEnabled": false
   },
   "services": {
-    "root": "https://svc-launchpartner.azurewebsites.net"
+    "root": "https://svc-launchpartners.azurewebsites.net"
   }
 }

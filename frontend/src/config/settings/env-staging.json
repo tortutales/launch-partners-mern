@@ -1,9 +1,9 @@
 {
-  "appName": "launchpartner (staging)",
+  "appName": "Launch Partners (staging)",
   "environment": {
     "name": "staging"
   },
   "services": {
-    "root": "https://svc-launchpartner-stg.celerik.com"
+    "root": "https://svc-launchpartners-stg.celerik.com"
   }
 }

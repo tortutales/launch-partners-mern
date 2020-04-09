@@ -13,6 +13,7 @@ import { globalUI } from '../../../core';
 
 // @styles
 import styles from './styles';
+import { config } from '../../../config';
 
 // @constants
 const EMPTY_ERROR = ' ';
@@ -22,7 +23,6 @@ const CtrlAvatarField = ({
     classes,
     disabled,
     id,
-    lang,
     maxSizeMb,
     name,
     onBlur,
@@ -43,7 +43,7 @@ const CtrlAvatarField = ({
 
     const getErrorMsg = (value) => {
         if (required && !value) {
-            return lang.validations.required;
+            return config.text.validations.required;
         }
 
         return EMPTY_ERROR;
@@ -54,7 +54,7 @@ const CtrlAvatarField = ({
             maxSizeMb,
             onMaxSizeExceeded: () => {
                 const msg = format(
-                    lang.users.avatarSizeExceeded, maxSizeMb
+                    config.text.users.avatarSizeExceeded, maxSizeMb
                 );
                 globalUI.showToastNotificationError(msg);
             },
@@ -111,7 +111,6 @@ CtrlAvatarField.propTypes = {
     classes: PropTypes.object.isRequired,
     disabled: PropTypes.bool,
     id: PropTypes.string.isRequired,
-    lang: PropTypes.shape({ }).isRequired,
     maxSizeMb: PropTypes.number,
     name: PropTypes.string,
     onBlur: PropTypes.func,

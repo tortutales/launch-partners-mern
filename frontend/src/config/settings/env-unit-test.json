@@ -1,5 +1,5 @@
 {
-  "appName": "launchpartner (unit test)",
+  "appName": "Launch Partners (unit test)",
   "environment": {
     "name": "unitTest"
   },
@@ -14,6 +14,6 @@
     "isEnabled": true
   },
   "services": {
-    "root": "https://svc-launchpartner-tst.celerik.com"
+    "root": "https://svc-launchpartners-tst.celerik.com"
   }
 }

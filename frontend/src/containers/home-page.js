@@ -1,11 +1,35 @@
 // @packages
+import PropTypes from 'prop-types';
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 // @scripts
-import HomePage from '../pages/home-page';
-import { config } from '../config';
+import SettingsPage from '../pages/settings-page';
+import { updateUser } from '../actions';
 
-const HomePageContainer = () =>
-    <HomePage content={config.text.homePage.content} />;
+const HomePageContainer = ({ user, onUpdateUser }) => (
+    <SettingsPage user={user} onUpdateUser={onUpdateUser} />
+);
 
-export default HomePageContainer;
+HomePageContainer.propTypes = {
+    user: PropTypes.shape({
+        avatarUrl: PropTypes.string,
+        description: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        userId: PropTypes.number.isRequired
+    }).isRequired,
+    onUpdateUser: PropTypes.func.isRequired
+};
+
+const mapStateToProps = ({ user }) => ({
+    user: user.account
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    onUpdateUser: updateUser
+}, dispatch);
+
+export default connect(
+    mapStateToProps, mapDispatchToProps
+)(HomePageContainer);

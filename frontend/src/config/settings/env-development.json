@@ -1,9 +1,9 @@
 {
-  "appName": "launchpartner (development)",
+  "appName": "Launch Partners (development)",
   "environment": {
     "name": "development"
   },
   "services": {
-    "root": "https://svc-launchpartner-dev.azurewebsites.net"
+    "root": "https://svc-launchpartners-dev.azurewebsites.net"
   }
 }

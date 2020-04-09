@@ -1,12 +1,5 @@
 [
   {
-    "component": "AppSettingsPageContainer",
-    "name": "appSettings",
-    "permission": "MainMenu.AppSettings",
-    "requiresLogout": false,
-    "url": "/app-settings"
-  },
-  {
     "component": "HomePageContainer",
     "name": "home",
     "permission": "MainMenu.Home",
@@ -21,32 +14,11 @@
     "url": "/login"
   },
   {
-    "component": "LogViewerPageContainer",
-    "name": "logViewer",
-    "permission": "MainMenu.LogViewer",
-    "requiresLogout": false,
-    "url": "/log-viewer"
-  },
-  {
-    "component": "MasterDataPageContainer",
-    "name": "masterData",
-    "permission": "MainMenu.MasterData",
-    "requiresLogout": false,
-    "url": "/master-data"
-  },
-  {
     "component": "SettingsPageContainer",
     "name": "settings",
     "permission": "ProfileMenu.Settings",
     "requiresLogout": false,
     "url": "/settings"
-  },
-  {
-    "component": "RolesPageContainer",
-    "name": "roles",
-    "permission": "MainMenu.Roles",
-    "requiresLogout": false,
-    "url": "/roles"
   },
   {
     "component": "UsersPageContainer",

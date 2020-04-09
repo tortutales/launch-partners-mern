@@ -2,70 +2,61 @@
 import { combineReducers } from 'redux';
 
 // @scripts
-import {
-    LOGIN,
-    REMEMBER_ME,
-    UPDATE_LANGUAGE
-} from '../actions';
+import { LOGIN, UPDATE_USER } from '../actions';
 import { config } from '../config';
 
 /**
- * @return {{email: string, name: string, permissions: string[]}}
+ * @return Object
  */
 const accountReducer = (
     state = config.initialState.user.account, action
 ) => {
     switch (action.type) {
-        case LOGIN:
+        case LOGIN: {
             const {
                 authToken,
+                avatarUrl,
+                description,
                 email,
                 name,
-                permissions
+                permissions,
+                userId
             } = action.payload;
             return {
                 authToken,
+                avatarUrl,
+                description,
                 email,
                 name,
-                permissions
+                permissions,
+                userId
             };
+        }
+        case UPDATE_USER: {
+            const {
+                avatarUrl,
+                description,
+                name
+            } = action.payload;
+            return Object.assign({}, state, {
+                avatarUrl,
+                description,
+                name
+            });
+        }
         default:
             return state;
     }
 };
 
 /**
- * @return {string}
+ * @return Object
  */
 const languageCodeReducer = (
-    state = config.initialState.user.languageCode, action
-) => {
-    switch (action.type) {
-        case LOGIN:
-            return action.payload.languageCode;
-        case UPDATE_LANGUAGE:
-            return action.payload;
-        default:
-            return state;
-    }
-};
-
-/**
- * @return {boolean}
- */
-const rememberMeReducer = (
-    state = config.initialState.user.rememberMe, action
-) => {
-    switch (action.type) {
-        case REMEMBER_ME:
-            return action.payload;
-        default:
-            return state;
-    }
-};
+    state = config.initialState.user.languageCode
+) => state;
 
 export const userReducer = combineReducers({
     account: accountReducer,
-    languageCode: languageCodeReducer,
-    rememberMe: rememberMeReducer
+    languageCode: languageCodeReducer
 });

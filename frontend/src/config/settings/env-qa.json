@@ -1,9 +1,9 @@
 {
-  "appName": "launchpartner (qa)",
+  "appName": "Launch Partners (qa)",
   "environment": {
     "name": "qa"
   },
   "services": {
-    "root": "https://svc-launchpartner-qa.celerik.com"
+    "root": "https://svc-launchpartners-qa.celerik.com"
   }
 }
