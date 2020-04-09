@@ -1,0 +1,8 @@
+{
+    "javascript.validate.enable": false,
+    "javascript.suggestionActions.enabled": false,
+    "files.exclude": {
+        "node_modules": true,
+        "package-lock.json": true
+    }
+}
