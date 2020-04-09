@@ -10,13 +10,13 @@ async function getAllUsersController(_req, res) {
     try {
         const users = await userService.getAll();
         responseSchema({
-            data: { users },
+            data: users,
             message: 'Users found succesfully',
             res
         });
     } catch (error) {
         responseSchema({
-            data: { users: [] },
+            data: [],
             error: true,
             httpStatusCode: httpCodes.NOT_FOUND,
             message: error.message,
@@ -30,13 +30,13 @@ async function loginController(req, res) {
     try {
         const user = await userService.login(req.body);
         responseSchema({
-            data: { user },
-            message: 'Users succesfully loggued',
+            data: user,
+            message: 'User succesfully loggued',
             res
         });
     } catch (error) {
         responseSchema({
-            data: { user: null },
+            data: null,
             error: true,
             httpStatusCode: httpCodes.UNAUTHORIZED,
             message: error.message,
@@ -47,7 +47,7 @@ async function loginController(req, res) {
 }
 
 async function updateUserController(req, res) {
-    const user = await User.findOne({ _id: req.body.id });
+    const user = await User.findOne({ userId: req.body.userId });
 
     user.avatarUrl = req.body.avatarUrl;
     user.description = req.body.description;
