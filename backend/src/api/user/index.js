@@ -10,7 +10,7 @@ const router = express.Router();
 
 // @middlewares
 const verifyLoginFields = ensurePayloadForm(['email', 'password']);
-const verifyUpdateField = ensurePayloadForm(['description', 'id', 'name']);
+const verifyUpdateField = ensurePayloadForm(['avatarUrl', 'description', 'id', 'name']);
 
 // @routes
 router.get('/', user.getAllUsersController);

@@ -49,6 +49,7 @@ async function loginController(req, res) {
 async function updateUserController(req, res) {
     const user = await User.findOne({ _id: req.body.id });
 
+    user.avatarUrl = req.body.avatarUrl;
     user.description = req.body.description;
     user.name = req.body.name;
 
