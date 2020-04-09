@@ -1,0 +1,9 @@
+{
+  "appName": "BestWebFirms (development)",
+  "environment": {
+    "name": "development"
+  },
+  "services": {
+    "root": "https://svc-bestwebfirms-dev.azurewebsites.net"
+  }
+}
