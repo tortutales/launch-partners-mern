@@ -1,9 +1,9 @@
 {
-  "appName": "BestWebFirms (development)",
+  "appName": "Launch Partners (development)",
   "environment": {
     "name": "development"
   },
   "services": {
-    "root": "https://svc-bestwebfirms-dev.azurewebsites.net"
+    "root": "https://svc-launchpartners-dev.azurewebsites.net"
   }
 }

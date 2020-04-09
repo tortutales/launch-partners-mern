@@ -6,7 +6,6 @@ import { withStyles } from '@material-ui/core/styles';
 // @scripts
 import CtrlHeader from '../../controls/general-purpose/ctrl-header';
 import CtrlLoginForm from './login-form';
-import CtrlPasswordRecovery from './password-recovery';
 import { config } from '../../config';
 import { initialState } from './state';
 import { isAllPropsValid } from '../../util';
@@ -23,8 +22,6 @@ class LoginPage extends PureComponent {
 
         this.handleFieldOnChange = this.handleFieldOnChange.bind(this);
         this.handleOnLogIn = this.handleOnLogIn.bind(this);
-        this.handleOnRecoverPassword = this.handleOnRecoverPassword.bind(this);
-        this.handleOnRememberMe = this.handleOnRememberMe.bind(this);
     }
 
     get isFormValid() {
@@ -38,35 +35,6 @@ class LoginPage extends PureComponent {
                 value
             }
         });
-    }
-
-    handleOnRecoverPassword() {
-        const { userProps } = this.props;
-
-        const {
-            onSendPasswordRecoveryCode,
-            onUpdatePasswordUsingRecoveryToken,
-            onVerifyPasswordRecoveryCode
-        } = userProps;
-
-        const content = (
-            <CtrlPasswordRecovery
-                id="login-page-recover-password"
-                onChangePassword={onUpdatePasswordUsingRecoveryToken}
-                onSendCode={onSendPasswordRecoveryCode}
-                onVerifyCode={onVerifyPasswordRecoveryCode}
-            />
-        );
-
-        globalUI.showModalDialog({
-            msg: content,
-            showCancel: false,
-            title: config.text.passwordRecovery.title
-        });
-    }
-
-    handleOnRememberMe({ value }) {
-        this.props.userProps.onRememberMe(value);
     }
 
     handleOnLogIn() {
@@ -87,11 +55,7 @@ class LoginPage extends PureComponent {
     }
 
     render() {
-        const {
-            classes,
-            userProps: { rememberMe }
-        } = this.props;
-
+        const { classes } = this.props;
         const { password, showErrors, user } = this.state;
 
         return (
@@ -109,9 +73,7 @@ class LoginPage extends PureComponent {
                     onFieldChange={this.handleFieldOnChange}
                     onLogin={this.handleOnLogIn}
                     onRecoverPassword={this.handleOnRecoverPassword}
-                    onRememberMe={this.handleOnRememberMe}
                     passwordValue={password.value}
-                    rememberMeValue={rememberMe}
                     showErrors={showErrors}
                     userValue={user.value}
                 />
@@ -124,12 +86,7 @@ LoginPage.propTypes = {
     classes: PropTypes.object.isRequired,
     userProps: PropTypes.shape({
         isLoggedIn: PropTypes.bool.isRequired,
-        onLogin: PropTypes.func.isRequired,
-        onRememberMe: PropTypes.func.isRequired,
-        onSendPasswordRecoveryCode: PropTypes.func.isRequired,
-        onUpdatePasswordUsingRecoveryToken: PropTypes.func.isRequired,
-        onVerifyPasswordRecoveryCode: PropTypes.func.isRequired,
-        rememberMe: PropTypes.bool.isRequired
+        onLogin: PropTypes.func.isRequired
     }).isRequired
 };
 

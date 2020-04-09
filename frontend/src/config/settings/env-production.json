@@ -1,5 +1,5 @@
 {
-  "appName": "BestWebFirms (production)",
+  "appName": "Launch Partners (production)",
   "environment": {
     "name": "production"
   },
@@ -7,6 +7,6 @@
     "isEnabled": false
   },
   "services": {
-    "root": "https://svc-bestwebfirms.azurewebsites.net"
+    "root": "https://svc-launchpartners.azurewebsites.net"
   }
 }

@@ -1,7 +1,4 @@
 {
-  "appSettings":{
-    "content": "App Settings"
-  },
   "common": {
     "cancel": "Cancel",
     "close":"Close",
@@ -22,60 +19,21 @@
   "homePage": {
     "content": "Welcome!"
   },
-  "logDetails": {
-    "title": "Log details",
-    "close": "Close"
-  },
-  "logViewer": {
-    "date": "Date",
-    "endHour": "End hour",
-    "keyword": "Keyword",
-    "level": "Level",
-    "logTable": {
-      "correlationId": "Correlation Id",
-      "date": "Date",
-      "details": "Details",
-      "hour": "Hour",
-      "level": "Level",
-      "message": "Message"
-    },
-    "search": "Search",
-    "startHour": "Start hour"
-  },
   "loginPage": {
     "continue": "Continue",
     "formTitle": "Log in",
     "invalidCredentials": "Invalid user name or password!",
     "password": "Password",
-    "remember": "Remember me",
     "userLabel": "Email",
-    "userPlaceholder": "name@bestwebfirms.com"
+    "userPlaceholder": "name@launchpartners.com"
   },
   "masterData": {
-  },
-  "masterDataPage": {
-    "expandAll": "Expand all",
-    "collapseAll": "Collapse all",
-    "notifications": {
-      "existingCode": "'Code' with value '{0}' already exists",
-      "existingDescription": "'Description' with value '{0}' already exists",
-      "existingId": "'Id' with value '{0}' already exists"
-    },
-    "popup": {
-      "code": "Code",
-      "description": "Description",
-      "id": "Id"
-    }
   },
   "modalDialog": {
     "cancel": "Cancel",
     "msg": "Are you sure you want to perform this action?",
     "ok": "Ok",
     "title": "Confirm"
-  },
-  "multiselect": {
-    "search": "Search",
-    "selectAll": "Select all"
   },
   "notFoundPage": {
     "content": "The resource you are looking for has been removed, had its name changed, or is temporarily unavailable."
@@ -96,47 +54,10 @@
     "showing": "Showing records from",
     "to": "to"
   },
-  "passwordRecovery": {
-    "enterEmailAddress": "Enter the email address associated with your user account:",
-    "forgotYourPassword": "Forgot your password?",
-    "newPassword": "New password",
-    "reEnterPassword": "Re-enter password",
-    "recoverPasswordFail": "There was an error updating your password :(",
-    "recoverPasswordSuccess": "Your password has been successfully updated!",
-    "title": "Password recovery",
-    "verificationCode": "Verification code",
-    "verificationCodeSent": "A verification code was send to your email.",
-    "verificationFail": "Invalid code. Please check your code and try again.",
-    "verificationSuccess": "The code was successfully verified!",
-    "verifyIdentityMessage": "For your security, we need to verify your identity. We've sent a code to your email. Please enter it below:"
-  },
-  "rolesPage": {
-    "popup": {
-      "cancel":"Cancel",
-      "description": "Description",
-      "permissionsTab": "Permissions",
-      "save": "Save",
-      "usersTab": "Users"
-    },
-    "table": {
-      "delete": "Delete",
-      "deleteConfirmation": "Are you sure you want to delete role '{0}'?",
-      "description": "Description",
-      "editTooltip": "Edit",
-      "options": "Options",
-      "permissions": "Permissions",
-      "users": "Users"
-    }
-  },
   "routes": {
     "admin": "Admin",
-    "appSettings": "Settings",
     "home": "Home",
-    "logViewer": "Log viewer",
     "login": "Logout",
-    "masterData": "Master data",
-    "roles": "Roles",
-    "security": "Security",
     "settings": "Settings",
     "users": "Users"
   },
@@ -144,9 +65,8 @@
     "confirmPassword": "Confirm password",
     "currentPassword": "Current password",
     "currentPasswordInvalid": "The current password is invalid",
-    "language": "Language",
     "newPassword": "New password",
-    "passwordUpdated": "The password was successfully updated!",
+    "profileUpdated": "Your profile was successfully updated!",
     "updatePassword": "Update password"
   },
   "table": {
@@ -166,19 +86,14 @@
     "profile": "My profile"
   },
   "users": {
-    "avatar": "Avatar",
     "avatarSizeExceeded": "The avatar size should be less than {0} MB",
+    "avatar": "Avatar",
     "changeAvatar": "Change avatar",
     "confirmPassword": "Confirm password",
+    "description": "Description",
     "email": "Email",
-    "emailConfirmed": "Email confirmed",
-    "failedAccess": "Failed access",
-    "language": "Language",
-    "lockEnd": "Lock end",
-    "locked": "Locked",
     "name": "Name",
     "password": "Password",
-    "roles": "Roles",
     "userId": "Id"
   },
   "validations": {

@@ -18,7 +18,7 @@
   "serviceMocker": {
     "delayResponse": 300,
     "isEnabled": true,
-    "loginEmail": "admin@bestwebfirms.com",
+    "loginEmail": "admin@launchpartners.com",
     "loginPassword": "MTIz",
     "passwordRecoveryCode": "MTIzNDU2"
   },

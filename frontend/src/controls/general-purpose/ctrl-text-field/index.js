@@ -336,7 +336,8 @@ class CtrlTextField extends PureComponent {
             showErrors,
             value,
             variant,
-            visible
+            visible,
+            rows
         } = this.props;
 
         if (!visible) {
@@ -372,6 +373,8 @@ class CtrlTextField extends PureComponent {
                 type={this.inputType}
                 value={value || ''}
                 variant={variant}
+                rows={rows}
+                multiline={rows > 1}
             />
         );
     }
@@ -402,6 +405,7 @@ CtrlTextField.propTypes = {
     placeholder: PropTypes.string,
     regexPattern: PropTypes.object,
     required: PropTypes.bool,
+    rows: PropTypes.number,
     showErrors: PropTypes.bool,
     textTransform: PropTypes.oneOf([...Object.values(transformType)]),
     type: PropTypes.oneOf([...Object.values(inputType)]),
@@ -433,6 +437,7 @@ CtrlTextField.defaultProps = {
     placeholder: null,
     regexPattern: null,
     required: false,
+    rows: 1,
     showErrors: true,
     textTransform: 'none',
     type: 'text',

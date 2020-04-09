@@ -32,7 +32,13 @@ const CtrlModalDialog = ({
         classes.modalDialog
     );
 
-    const style = width && { width };
+    const msgStyle = {
+        overflow: 'hidden'
+    };
+
+    if (width) {
+        msgStyle.width = width;
+    }
 
     return (
         <Dialog
@@ -43,7 +49,7 @@ const CtrlModalDialog = ({
             open={visible}
         >
             <DialogTitle id={`${id}-title`}>{title}</DialogTitle>
-            <DialogContent id={`${id}-msg`} style={style}>{msg}</DialogContent>
+            <DialogContent id={`${id}-msg`} style={msgStyle}>{msg}</DialogContent>
             { (showCancel || onConfirm || customActions) &&
                 <DialogActions>
                     {showCancel &&

@@ -1,9 +1,9 @@
 {
-  "appName": "BestWebFirms (qa)",
+  "appName": "Launch Partners (qa)",
   "environment": {
     "name": "qa"
   },
   "services": {
-    "root": "https://svc-bestwebfirms-qa.celerik.com"
+    "root": "https://svc-launchpartners-qa.celerik.com"
   }
 }

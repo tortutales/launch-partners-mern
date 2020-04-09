@@ -6,48 +6,28 @@ import { connect } from 'react-redux';
 
 // scripts
 import UsersPage from '../pages/users-page';
-import { config } from '../config';
 import { globalUI } from '../core';
-
-import {
-    getAllUsers,
-    insertUser,
-    updateUser
-} from '../actions';
+import { getAllUsers } from '../actions';
 
 const UsersPageContainer = ({
     onGetAllUsers,
-    onInsertUser,
-    onUpdateUser,
     users
 }) =>
     (
         <UsersPage
-            lang={config.text}
-            languageList={config.masterData.languages}
             onGetAllUsers={onGetAllUsers}
             onHideModal={globalUI.hideModalDialog}
-            onInsertUser={onInsertUser}
-            onUpdateUser={onUpdateUser}
             users={users}
         />
     );
 
 UsersPageContainer.propTypes = {
     onGetAllUsers: PropTypes.func.isRequired,
-    onInsertUser: PropTypes.func.isRequired,
-    onUpdateUser: PropTypes.func.isRequired,
     users: PropTypes.arrayOf(PropTypes.shape({
-        accessFailedCount: PropTypes.number.isRequired,
         avatarUrl: PropTypes.string,
+        description: PropTypes.string,
         email: PropTypes.string.isRequired,
-        emailConfirmed: PropTypes.bool.isRequired,
-        languageCode: PropTypes.string.isRequired,
-        lockoutEnabled: PropTypes.bool.isRequired,
-        lockoutEndDate: PropTypes.string,
         name: PropTypes.string.isRequired,
-        permissions: PropTypes.arrayOf(PropTypes.string).isRequired,
-        roles: PropTypes.arrayOf(PropTypes.string).isRequired,
         userId: PropTypes.number.isRequired
     })).isRequired
 };
@@ -57,9 +37,7 @@ const mapStateToProps = ({ security }) => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    onGetAllUsers: getAllUsers,
-    onInsertUser: insertUser,
-    onUpdateUser: updateUser
+    onGetAllUsers: getAllUsers
 }, dispatch);
 
 export default connect(

@@ -1,37 +1,12 @@
 {
   "appVersion": null,
-  "commonData": {
-    "appSettingList": []
-  },
   "loadingPage": {
     "isVisible": false,
     "msg": null
   },
-  "logViewer": {
-    "filter": {
-      "date": null,
-      "endHour": 23,
-      "keyword": "",
-      "level": "Any",
-      "pageNumber": 1,
-      "pageSize": 100,
-      "sortDirection": "desc",
-      "sortKey": "date",
-      "startHour": 0
-    },
-    "results": {
-      "items": [],
-      "recordCount": 0,
-      "pageCount": 0
-    }
-  },
   "mainMenu": {
     "expandedItems": [],
     "isExpanded": true
-  },
-  "masterData": {
-    "expandedItems": [],
-    "items": []
   },
   "modalDialog": {
     "cancelLabel": null,
@@ -50,21 +25,18 @@
     "type": null
   },
   "security": {
-    "allPermissions": [],
-    "allRoles": [],
     "allUsers": []
   },
   "user": {
     "account": {
       "authToken": null,
       "avatarUrl": null,
+      "description": null,
       "email": null,
       "name": null,
       "permissions": [],
-      "roles": [],
       "userId": null
     },
-    "languageCode": "en",
-    "rememberMe": true
+    "languageCode": "en"
   }
 }

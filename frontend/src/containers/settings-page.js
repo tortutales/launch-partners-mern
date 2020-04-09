@@ -6,36 +6,28 @@ import { connect } from 'react-redux';
 
 // @scripts
 import SettingsPage from '../pages/settings-page';
-import { config } from '../config';
-import { updateLanguage, updateMyPassword } from '../actions';
+import { updateUser } from '../actions';
 
-const SettingsPageContainer = ({
-    languageOnChange,
-    languageCode
-}) => (
-    <SettingsPage
-        languageProps={{
-            list: config.masterData.languages,
-            onChange: languageOnChange,
-            value: languageCode
-        }}
-        userProps={{
-            onUpdateMyPassword: updateMyPassword
-        }}
-    />
+const SettingsPageContainer = ({ user, onUpdateUser }) => (
+    <SettingsPage user={user} onUpdateUser={onUpdateUser} />
 );
 
 SettingsPageContainer.propTypes = {
-    languageOnChange: PropTypes.func.isRequired,
-    languageCode: PropTypes.string.isRequired
+    user: PropTypes.shape({
+        avatarUrl: PropTypes.string,
+        description: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        userId: PropTypes.number.isRequired
+    }).isRequired,
+    onUpdateUser: PropTypes.func.isRequired
 };
 
 const mapStateToProps = ({ user }) => ({
-    languageCode: user.languageCode
+    user: user.account
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    languageOnChange: updateLanguage
+    onUpdateUser: updateUser
 }, dispatch);
 
 export default connect(
