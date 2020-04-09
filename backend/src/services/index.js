@@ -1,11 +1,8 @@
-// @packages
-
-// @scripts
-const buildUserService = require('./users.service');
-const { User } = require('../models');
+// @scripts\
+const buildUserService = require('./user.service');
 
 // @constants
-const userService = buildUserService({ userModel: User });
+const userService = buildUserService();
 
 module.exports = {
     userService
