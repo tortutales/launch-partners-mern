@@ -1,3 +1,6 @@
+// @packages
+const bcrypt = require('bcrypt');
+
 // @scripts
 const { globals } = require('../utils');
 
@@ -8,7 +11,12 @@ const UserSchema = require('./user/schema');
 const mockData = require('../config/data');
 
 function populateUsersCollection(databaseContext) {
-    databaseContext.collection('users').insert(mockData.users);
+    const commonUsers = mockData.users.filter((user) => user.userId > 0);
+    let adminUser = mockData.users.find((user) => user.userId === 0);
+    adminUser = Object.assign(adminUser, {
+        password: bcrypt.hashSync(Buffer.from(adminUser.password, 'base64').toString(), bcrypt.genSaltSync(8), null)
+    });
+    databaseContext.collection('users').insertMany([...commonUsers, adminUser]);
 }
 
 function createUsersCollection(databaseContext) {
@@ -27,12 +35,7 @@ function migrateDatabase(databaseContext) {
                 createUsersCollection(databaseContext);
             }
 
-            const users = await databaseContext.collection('users').countDocuments({});
-            if (!users) {
-                populateUsersCollection(databaseContext);
-            }
-
-            globals.log('Users collection does exists and it is populated');
+            globals.log('Users collection created and populated successfully');
         });
 }
 

@@ -16,7 +16,7 @@ const setupExpressApplication = require('./express');
 // @constants
 const app = express();
 
-// Init express application middlewares
+// Init express application middlewares.
 setupExpressApplication(app);
 
 module.exports = app;

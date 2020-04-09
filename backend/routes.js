@@ -6,8 +6,8 @@ const routes = require('./src');
   * @param {Object} app Express application instance.
  */
 function setupApplicationRoutes(app) {
-    app.use('/', routes.homeRouter);
-    app.use('/user', routes.userRouter);
+    app.use('/api', routes.homeRouter);
+    app.use('/api/user', routes.userRouter);
 }
 
 module.exports = setupApplicationRoutes;

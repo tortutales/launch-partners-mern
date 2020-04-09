@@ -1,7 +1,7 @@
 {
   "security": {
-    "getAllUsers": "{root}/api/security/getAllUsers",
-    "login": "{root}/api/security/login",
-    "updateUser": "{root}/api/security/updateUser"
+    "getAllUsers": "{root}/api/user",
+    "login": "{root}/api/user/login",
+    "updateUser": "{root}/api/user"
   }
 }

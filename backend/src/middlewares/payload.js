@@ -8,8 +8,8 @@ const { responseSchema } = require('../utils');
  */
 function ensurePayloadForm(requiredFields) {
     return function verifyPayloadForm(req, res, next) {
-        const { body } = req;
-        const allFieldsArePresent = requiredFields.every((field) => body[field]);
+        const allFieldsArePresent = requiredFields.every((field) =>
+            Object.prototype.hasOwnProperty.call(req.body, field));
 
         if (allFieldsArePresent) {
             next();

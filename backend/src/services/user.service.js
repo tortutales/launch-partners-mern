@@ -9,24 +9,24 @@ const { User } = require('../models');
 
 function buildUserService() {
     return {
-        async login(user) {
-            const userInDB = await User.findOne({ email: user.email });
+        async login(userLoggingIn) {
+            const user = await User.findOne({ email: userLoggingIn.email });
 
-            if (!userInDB) {
-                throw new Error('Either email or password does not exists');
+            if (!user) {
+                throw new Error('Invalid email or password!');
             }
 
-            const hasSamePassword = await bcrypt.compare(user.password, userInDB.password);
+            const hasSamePassword = await bcrypt.compareSync(userLoggingIn.password, user.password);
 
             if (!hasSamePassword) {
-                throw new Error('Either email or password does not exists');
+                throw new Error('Invalid email or password!');
             }
 
-            const token = auth.generateJWToken(userInDB.toJSON());
+            const authToken = auth.generateJWToken(user.toJSON());
 
             return {
-                user: userInDB,
-                token
+                authToken,
+                ...user.toJSON()
             };
         },
         async getAll() {

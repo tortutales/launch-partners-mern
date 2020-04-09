@@ -4,6 +4,6 @@
     "name": "local"
   },
   "services": {
-    "root": "https://localhost:44395"
+    "root": "http://localhost:7589"
   }
 }

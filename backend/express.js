@@ -1,8 +1,10 @@
 // @packages
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const createError = require('http-errors');
 const express = require('express');
 const logger = require('morgan');
+const multer = require('multer');
 
 // @scripts
 const setupApplicationRoutes = require('./routes');
@@ -13,10 +15,12 @@ const setupApplicationRoutes = require('./routes');
  */
 function setupExpressApplication(app) {
     // Application middlewares
-    app.use(logger('dev'));
+    app.use(cookieParser());
+    app.use(cors());
     app.use(express.json());
     app.use(express.urlencoded({ extended: false }));
-    app.use(cookieParser());
+    app.use(logger('dev'));
+    app.use(multer().none());
 
     // Init express application routes
     setupApplicationRoutes(app);
