@@ -1,0 +1,19 @@
+{
+  "appName": "BestWebFirms (unit test)",
+  "environment": {
+    "name": "unitTest"
+  },
+  "localStorage": {
+    "isEnabled": false
+  },
+  "reduxLogger": {
+    "isEnabled": false
+  },
+  "serviceMocker": {
+    "delayResponse": 0,
+    "isEnabled": true
+  },
+  "services": {
+    "root": "https://svc-bestwebfirms-tst.celerik.com"
+  }
+}
