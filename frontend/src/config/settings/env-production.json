@@ -1,0 +1,12 @@
+{
+  "appName": "BestWebFirms (production)",
+  "environment": {
+    "name": "production"
+  },
+  "reduxLogger": {
+    "isEnabled": false
+  },
+  "services": {
+    "root": "https://svc-bestwebfirms.azurewebsites.net"
+  }
+}

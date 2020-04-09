@@ -1,0 +1,12 @@
+[
+  {
+    "icon": "settings",
+    "isDefault": false,
+    "name": "settings"
+  },
+  {
+    "icon": "exit_to_application",
+    "isDefault": true,
+    "name": "login"
+  }
+]

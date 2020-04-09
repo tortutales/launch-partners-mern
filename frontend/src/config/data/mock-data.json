@@ -1,0 +1,127 @@
+{
+  "appSettingGetAllSvcResponse": [
+    {"settingId": 1, "category": "Settings", "key": "PricePerSquareFeet", "value": "12.5", "type": "numeric", "required": true, "min": 0, "max": 100, "decimals": 2, "regex": null, "allowedValues": null, "editPermission": "Settings.EditPricePerSquareFeet" },
+    {"settingId": 2, "category": "Settings", "key": "GrossProfitPercentage", "value": "0.75", "type": "numeric", "required": true, "min": 0, "max": 1, "decimals": 2, "regex": null, "allowedValues": null, "editPermission": "Settings.EditGrossProfitPercentage"},
+    {"settingId": 3, "category": "Settings", "key": "EstimatedDeliveryDays", "value": "5", "type": "numeric", "required": true, "min": 1, "max": 100, "decimals": 0, "regex": null, "allowedValues": null, "editPermission": "Settings.EditEstimatedDeliveryDays"}
+  ],
+  "logSearchSvcResponse": [
+    {"date": "2019-01-16T17:16:40.433", "level": "Info", "message": "Log info 1", "details": "Log", "correlationId": "ead31ad7-42d8-4ad4-b51a-f8f6e2035b8a"},
+    {"date": "2019-01-20T10:11:02.433", "level": "Info", "message": "Log info 2", "details": "Log", "correlationId": "cb20556d-63e4-4fb8-bd44-6157f5ce786d"},
+    {"date": "2019-01-22T12:16:50.433", "level": "Error", "message": "Log error 1", "details": "Log", "correlationId": "94efc56e-b845-4c21-b5f2-95b67674cb01"},
+    {"date": "2019-01-24T10:12:30.433", "level": "Warning", "message": "Log warning 1", "details": "Log", "correlationId": "59231e54-00c6-47a0-ad62-f3e98544d879a"},
+    {"date": "2019-01-28T15:16:42.433", "level": "Debug", "message": "Log debug 1", "details": "Log", "correlationId": "009701f7-3523-45ad-9e0a-4578435772ff"},
+    {"date": "2019-02-03T22:17:41.433", "level": "Error", "message": "Log error 2", "details": "Log", "correlationId": "3b7592e0-df9e-45e2-96ee-87bc3b723e34"},
+    {"date": "2019-01-16T17:16:40.433", "level": "Info", "message": "Log info 1", "details": "Log", "correlationId": "ead31ad7-42d8-4ad4-b51a-f8f6e2035b8a"},
+    {"date": "2019-01-20T10:11:02.433", "level": "Info", "message": "Log info 2", "details": "Log", "correlationId": "cb20556d-63e4-4fb8-bd44-6157f5ce786d"},
+    {"date": "2019-01-22T12:16:50.433", "level": "Error", "message": "Log error 1", "details": "Log", "correlationId": "94efc56e-b845-4c21-b5f2-95b67674cb01"},
+    {"date": "2019-01-24T10:12:30.433", "level": "Warning", "message": "Log warning 1", "details": "Log", "correlationId": "59231e54-00c6-47a0-ad62-f3e98544d879a"},
+    {"date": "2019-01-28T15:16:42.433", "level": "Debug", "message": "Log debug 1", "details": "Log", "correlationId": "009701f7-3523-45ad-9e0a-4578435772ff"},
+    {"date": "2019-02-03T22:17:41.433", "level": "Error", "message": "Log error 2", "details": "Log", "correlationId": "3b7592e0-df9e-45e2-96ee-87bc3b723e34"},
+    {"date": "2019-01-16T17:16:40.433", "level": "Info", "message": "Log info 1", "details": "Log", "correlationId": "ead31ad7-42d8-4ad4-b51a-f8f6e2035b8a"},
+    {"date": "2019-01-20T10:11:02.433", "level": "Info", "message": "Log info 2", "details": "Log", "correlationId": "cb20556d-63e4-4fb8-bd44-6157f5ce786d"},
+    {"date": "2019-01-22T12:16:50.433", "level": "Error", "message": "Log error 1", "details": "Log", "correlationId": "94efc56e-b845-4c21-b5f2-95b67674cb01"}
+  ],
+  "masterDataSvcResponse": [
+    {"masterDataId": 1000, "parentId": null, "id": 1000, "code": "L01", "description": "Language", "autoId": false, "addPermission": null, "editPermission": null, "deletePermission": null,
+      "children": [
+        {"masterDataId": 1001, "parentId": 1000, "id": 1, "code": "en", "description": "English", "autoId": false, "addPermission": null, "editPermission": null, "deletePermission": null, "children": null}
+      ]
+    },
+    {"masterDataId": 2000, "parentId": null, "id": 2000, "code": "L02", "description": "Log Level", "autoId": false, "addPermission": null, "editPermission": null, "deletePermission": null,
+      "children": [
+        {"masterDataId": 2001, "parentId": 2000, "id": 1, "code": "D", "description": "Debug", "autoId": false, "addPermission": null, "editPermission": null, "deletePermission": null, "children": null},
+        {"masterDataId": 2002, "parentId": 2000, "id": 2, "code": "I", "description": "Info", "autoId": false, "addPermission": null, "editPermission": null, "deletePermission": null, "children": null},
+        {"masterDataId": 2003, "parentId": 2000, "id": 3, "code": "W", "description": "Warn", "autoId": false, "addPermission": null, "editPermission": null, "deletePermission": null, "children": null},
+        {"masterDataId": 2004, "parentId": 2000, "id": 4, "code": "E", "description": "Error", "autoId": false, "addPermission": null, "editPermission": null, "deletePermission": null, "children": null}
+      ]
+    }
+  ],
+  "securityGetAllPermissionsSvcResponse": [
+    {"permissionId": 1, "description": "Settings.EditEstimatedDeliveryDays"},
+    {"permissionId": 2, "description": "Settings.EditGrossProfitPercentage"},
+    {"permissionId": 3, "description": "Settings.EditPricePerSquareFeet"},
+    {"permissionId": 4, "description": "MainMenu.AppSettings"},
+    {"permissionId": 5, "description": "MainMenu.Home"},
+    {"permissionId": 6, "description": "MainMenu.LogViewer"},
+    {"permissionId": 7, "description": "MainMenu.MasterData"},
+    {"permissionId": 9, "description": "MainMenu.Roles"},
+    {"permissionId": 10, "description": "MasterData.Add"},
+    {"permissionId": 11, "description": "MasterData.Delete"},
+    {"permissionId": 12, "description": "MasterData.Edit"},
+    {"permissionId": 13, "description": "ProfileMenu.Settings"},
+    {"permissionId": 14, "description": "TopBar.Alerts"},
+    {"permissionId": 15, "description": "TopBar.Profile"}
+  ],
+  "securityGetAllUsersSvcResponse": [
+    {"userId": 1, "name": "TATIANA OCAMPO",  "email": "tocampo@celerik.com",   "emailConfirmed": false, "lockoutEnabled": true,  "lockoutEndDate": "2020-01-01T17:16:40.433-05:00", "accessFailedCount": 8, "avatarUrl": null,                                                           "languageCode": "es", "roles": ["Administrator"], "permissions": []},
+    {"userId": 2, "name": "ANDRÉS ESPINOSA", "email": "aespinosa@celerik.com", "emailConfirmed": true,  "lockoutEnabled": false, "lockoutEndDate": null,                            "accessFailedCount": 0, "avatarUrl": "http://www.celerik.com/wp-content/uploads/2017/09/andres.jpg", "languageCode": "es", "roles": ["Superadmin"],    "permissions": []},
+    {"userId": 3, "name": "DANIEL GONZÁLEZ", "email": "dgonzalez@celerik.com", "emailConfirmed": true,  "lockoutEnabled": false, "lockoutEndDate": null,                            "accessFailedCount": 0, "avatarUrl": "http://www.celerik.com/wp-content/uploads/2017/09/dani-1.jpg", "languageCode": "en", "roles": ["Superadmin"],    "permissions": []},
+    {"userId": 4, "name": "JUAN CUARTAS",    "email": "jcuartas@celerik.com",  "emailConfirmed": true,  "lockoutEnabled": false, "lockoutEndDate": null,                            "accessFailedCount": 1, "avatarUrl": null,                                                           "languageCode": "en", "roles": ["Superadmin"],    "permissions": []},
+    {"userId": 5, "name": "JUAN ESTRADA",    "email": "jestrada@celerik.com",  "emailConfirmed": true,  "lockoutEnabled": false, "lockoutEndDate": null,                            "accessFailedCount": 0, "avatarUrl": null,                                                           "languageCode": "es", "roles": ["Superadmin"],    "permissions": []},
+    {"userId": 6, "name": "PABLO LIZCANO",   "email": "jgonzalez@celerik.com", "emailConfirmed": true,  "lockoutEnabled": false, "lockoutEndDate": null,                            "accessFailedCount": 5, "avatarUrl": "http://www.celerik.com/wp-content/uploads/2017/09/juanpa.png", "languageCode": "es", "roles": ["Superadmin"],    "permissions": []},
+    {"userId": 7, "name": "JOSÉ RIOS",       "email": "jrios@celerik.com",     "emailConfirmed": true,  "lockoutEnabled": false, "lockoutEndDate": null,                            "accessFailedCount": 0, "avatarUrl": null,                                                           "languageCode": "es", "roles": ["Superadmin"],    "permissions": []}
+  ],
+  "securityGetAllRolesSvcResponse": [
+    {
+      "roleId": 1,
+      "description": "Administrator",
+      "users": [
+        {"name": "Andrés Espinosa", "email": "aespinosa@celerik.com"},
+        {"name": "Juan David", "email": "jdavid@celerik.com"},
+        {"name": "Juan Pablo", "email": "jpablo@celerik.com"},
+        {"name": "Daniel Gonzalez", "email": "dgonzalez@celerik.com"}
+      ],
+      "permissions": [
+        {"permissionId": 1, "description": "Settings.EditEstimatedDeliveryDays"},
+        {"permissionId": 2, "description": "Settings.EditGrossProfitPercentage"},
+        {"permissionId": 3, "description": "Settings.EditPricePerSquareFeet"},
+        {"permissionId": 4, "description": "MainMenu.AppSettings"},
+        {"permissionId": 5, "description": "MainMenu.Home"},
+        {"permissionId": 6, "description": "MainMenu.LogViewer"},
+        {"permissionId": 7, "description": "MainMenu.MasterData"},
+        {"permissionId": 9, "description": "MainMenu.Roles"},
+        {"permissionId": 10, "description": "MasterData.Add"},
+        {"permissionId": 11, "description": "MasterData.Delete"},
+        {"permissionId": 12, "description": "MasterData.Edit"},
+        {"permissionId": 13, "description": "ProfileMenu.Settings"},
+        {"permissionId": 14, "description": "TopBar.Alerts"},
+        {"permissionId": 15, "description": "TopBar.Profile"}
+      ]
+    },
+    {
+      "roleId": 2,
+      "description": "Visitor",
+      "users": [{"name": "Carlos", "email": "carlos@celerik.com"}],
+      "permissions": [{"permissionId": 5, "description": "MainMenu.Home"}]
+    },
+    {
+      "roleId": 3,
+      "description": "Customer",
+      "users": [{"name": "Camilo", "email": "camilo@celerik.com"}],
+      "permissions": [{"permissionId": 5, "description": "MainMenu.Home"}]
+    }
+  ],
+  "securityLoginSvcResponse": {
+    "email": "admin@bestwebfirms.com",
+    "languageCode": "en",
+    "name": "Admin",
+    "authToken": "91AE2B60-A22E-43BA-B550-5D459A6A5F92",
+    "permissions": [
+      "MainMenu.AppSettings",
+      "MainMenu.Home",
+      "MainMenu.LogViewer",
+      "MainMenu.MasterData",
+      "MainMenu.Roles",
+      "MainMenu.Users",
+      "ProfileMenu.Settings",
+      "Settings.EditEstimatedDeliveryDays",
+      "Settings.EditGrossProfitPercentage",
+      "Settings.EditPricePerSquareFeet",
+      "TopBar.Alerts",
+      "TopBar.Profile"
+    ]
+  },
+  "securityVerifyPasswordRecoveryCodeSvcResponse": {
+    "recoveryToken": "db2ad37c-31b5-4c5f-8721-2ca6cbe5e350"
+  }
+}

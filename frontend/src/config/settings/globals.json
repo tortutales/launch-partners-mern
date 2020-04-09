@@ -1,0 +1,30 @@
+{
+  "ajaxInterceptors": {
+    "convertRequestDataTo": "none",
+    "convertResponseDataTo": "none",
+    "showLoadingPage": true,
+    "showNotifications": true
+  },
+  "localStorage": {
+    "device": "localStorage",
+    "isEnabled": true,
+    "key":  "state",
+    "savableState": ["appVersion", "user"],
+    "throttleWait": 1000
+  },
+  "reduxLogger": {
+    "isEnabled": true
+  },
+  "serviceMocker": {
+    "delayResponse": 300,
+    "isEnabled": true,
+    "loginEmail": "admin@bestwebfirms.com",
+    "loginPassword": "MTIz",
+    "passwordRecoveryCode": "MTIzNDU2"
+  },
+  "toastNoficiation": {
+    "autoHideDuration": 5000,
+    "horizontalPosition": "center",
+    "verticalPosition": "bottom"
+  }
+}

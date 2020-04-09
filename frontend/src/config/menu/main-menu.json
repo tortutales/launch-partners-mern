@@ -1,0 +1,46 @@
+[
+    {
+        "icon": "home",
+        "isDefault": true,
+        "name": "home"
+    },
+    {
+        "icon": "bug_report",
+        "isDefault": false,
+        "name": "logViewer"
+    },
+    {
+        "icon": "verified_user",
+        "isDefault": false,
+        "name": "admin",
+        "submenuItems": [
+            {
+                "icon": "settings",
+                "isDefault": false,
+                "name": "appSettings"
+            },
+            {
+                "icon": "list_alt",
+                "isDefault": false,
+                "name": "masterData"
+            }
+        ]
+    },
+    {
+        "icon": "security",
+        "isDefault": false,
+        "name": "security",
+        "submenuItems": [
+            {
+                "icon": "assignment_ind",
+                "isDefault": false,
+                "name": "users"
+            },
+            {
+                "icon": "supervised_user_circle",
+                "isDefault": false,
+                "name": "roles"
+            }
+        ]
+    }
+]

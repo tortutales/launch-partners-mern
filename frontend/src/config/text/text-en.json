@@ -1,0 +1,197 @@
+{
+  "appSettings":{
+    "content": "App Settings"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "close":"Close",
+    "collapse": "Collapse",
+    "confirmDelete": "Are you sure you want to delete record '{0}'?",
+    "delete": "Delete",
+    "edit": "Edit",
+    "expand": "Expand",
+    "export": "Export",
+    "new": "New",
+    "options": "Options",
+    "save": "Save",
+    "view": "View"
+  },
+  "footer": {
+    "copyright": "© 2020, developed by Celerik"
+  },
+  "homePage": {
+    "content": "Welcome!"
+  },
+  "logDetails": {
+    "title": "Log details",
+    "close": "Close"
+  },
+  "logViewer": {
+    "date": "Date",
+    "endHour": "End hour",
+    "keyword": "Keyword",
+    "level": "Level",
+    "logTable": {
+      "correlationId": "Correlation Id",
+      "date": "Date",
+      "details": "Details",
+      "hour": "Hour",
+      "level": "Level",
+      "message": "Message"
+    },
+    "search": "Search",
+    "startHour": "Start hour"
+  },
+  "loginPage": {
+    "continue": "Continue",
+    "formTitle": "Log in",
+    "invalidCredentials": "Invalid user name or password!",
+    "password": "Password",
+    "remember": "Remember me",
+    "userLabel": "Email",
+    "userPlaceholder": "name@bestwebfirms.com"
+  },
+  "masterData": {
+  },
+  "masterDataPage": {
+    "expandAll": "Expand all",
+    "collapseAll": "Collapse all",
+    "notifications": {
+      "existingCode": "'Code' with value '{0}' already exists",
+      "existingDescription": "'Description' with value '{0}' already exists",
+      "existingId": "'Id' with value '{0}' already exists"
+    },
+    "popup": {
+      "code": "Code",
+      "description": "Description",
+      "id": "Id"
+    }
+  },
+  "modalDialog": {
+    "cancel": "Cancel",
+    "msg": "Are you sure you want to perform this action?",
+    "ok": "Ok",
+    "title": "Confirm"
+  },
+  "multiselect": {
+    "search": "Search",
+    "selectAll": "Select all"
+  },
+  "notFoundPage": {
+    "content": "The resource you are looking for has been removed, had its name changed, or is temporarily unavailable."
+  },
+  "notifications": {
+    "delete": "The record was successfully deleted!",
+    "insert": "The record was successfully inserted!",
+    "update": "The record was successfully updated!"
+  },
+  "pagination": {
+    "items": "items",
+    "itemsPerPage": "Items per page",
+    "next": "Next",
+    "of": "of",
+    "ofTotal": "of total",
+    "page": "Page",
+    "previous": "Previous",
+    "showing": "Showing records from",
+    "to": "to"
+  },
+  "passwordRecovery": {
+    "enterEmailAddress": "Enter the email address associated with your user account:",
+    "forgotYourPassword": "Forgot your password?",
+    "newPassword": "New password",
+    "reEnterPassword": "Re-enter password",
+    "recoverPasswordFail": "There was an error updating your password :(",
+    "recoverPasswordSuccess": "Your password has been successfully updated!",
+    "title": "Password recovery",
+    "verificationCode": "Verification code",
+    "verificationCodeSent": "A verification code was send to your email.",
+    "verificationFail": "Invalid code. Please check your code and try again.",
+    "verificationSuccess": "The code was successfully verified!",
+    "verifyIdentityMessage": "For your security, we need to verify your identity. We've sent a code to your email. Please enter it below:"
+  },
+  "rolesPage": {
+    "popup": {
+      "cancel":"Cancel",
+      "description": "Description",
+      "permissionsTab": "Permissions",
+      "save": "Save",
+      "usersTab": "Users"
+    },
+    "table": {
+      "delete": "Delete",
+      "deleteConfirmation": "Are you sure you want to delete role '{0}'?",
+      "description": "Description",
+      "editTooltip": "Edit",
+      "options": "Options",
+      "permissions": "Permissions",
+      "users": "Users"
+    }
+  },
+  "routes": {
+    "admin": "Admin",
+    "appSettings": "Settings",
+    "home": "Home",
+    "logViewer": "Log viewer",
+    "login": "Logout",
+    "masterData": "Master data",
+    "roles": "Roles",
+    "security": "Security",
+    "settings": "Settings",
+    "users": "Users"
+  },
+  "settingsPage": {
+    "confirmPassword": "Confirm password",
+    "currentPassword": "Current password",
+    "currentPasswordInvalid": "The current password is invalid",
+    "language": "Language",
+    "newPassword": "New password",
+    "passwordUpdated": "The password was successfully updated!",
+    "updatePassword": "Update password"
+  },
+  "table": {
+    "noData": "No Data",
+    "previousPage": "Previous Page",
+    "nextPage": "Next Page"
+  },
+  "textFieldPlaceHolders": {
+    "email": "email@company.com",
+    "phone": "(555) 555-5555",
+    "zip": "12345 / 12345-6789"
+  },
+  "topBar": {
+    "alerts": "Alerts",
+    "collapse": "Collapse",
+    "expand": "Expand",
+    "profile": "My profile"
+  },
+  "users": {
+    "avatar": "Avatar",
+    "avatarSizeExceeded": "The avatar size should be less than {0} MB",
+    "changeAvatar": "Change avatar",
+    "confirmPassword": "Confirm password",
+    "email": "Email",
+    "emailConfirmed": "Email confirmed",
+    "failedAccess": "Failed access",
+    "language": "Language",
+    "lockEnd": "Lock end",
+    "locked": "Locked",
+    "name": "Name",
+    "password": "Password",
+    "roles": "Roles",
+    "userId": "Id"
+  },
+  "validations": {
+    "date": "Invalid date",
+    "email": "Invalid email",
+    "maxValue": "Max value: {0}",
+    "minCharacters": "Expected at least {0} characters",
+    "minValue": "Min value: {0}",
+    "number": "Invalid number",
+    "phone": "Invalid phone",
+    "required": "Required field",
+    "search": "Invalid search",
+    "verification": "Verification doesn't match",
+    "zip": "Invalid zip code"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "setting": {
+    "getAll": "{root}/api/setting/getAll",
+    "save": "{root}/api/setting/updateSeveralByCategoryAndKey"
+  },
+  "log": {
+    "search": "{root}/api/log/search"
+  },
+  "masterData": {
+    "delete": "{root}/api/masterData/delete",
+    "getAll": "{root}/api/masterData/getAll",
+    "insert": "{root}/api/masterData/insert",
+    "update": "{root}/api/masterData/update"
+  },
+  "security": {
+    "deleteRole": "{root}/api/security/deleteRole",
+    "getAllPermissions": "{root}/api/security/getAllPermissions",
+    "getAllRoles": "{root}/api/security/getAllRoles",
+    "getAllUsers": "{root}/api/security/getAllUsers",
+    "insertRole": "{root}/api/security/insertRole",
+    "insertUser": "{root}/api/security/insertUser",
+    "login": "{root}/api/security/login",
+    "sendPasswordRecoveryCode": "{root}/api/security/sendPasswordRecoveryCode",
+    "updateLanguage": "{root}/api/security/updateLanguage",
+    "updateMyPassword": "{root}/api/security/updateMyPassword",
+    "updatePasswordUsingRecoveryToken": "{root}/api/security/updatePasswordUsingRecoveryToken",
+    "updateRole": "{root}/api/security/updateRole",
+    "updateUser": "{root}/api/security/updateUser",
+    "verifyPasswordRecoveryCode": "{root}/api/security/verifyPasswordRecoveryCode"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "appVersion": null,
+  "commonData": {
+    "appSettingList": []
+  },
+  "loadingPage": {
+    "isVisible": false,
+    "msg": null
+  },
+  "logViewer": {
+    "filter": {
+      "date": null,
+      "endHour": 23,
+      "keyword": "",
+      "level": "Any",
+      "pageNumber": 1,
+      "pageSize": 100,
+      "sortDirection": "desc",
+      "sortKey": "date",
+      "startHour": 0
+    },
+    "results": {
+      "items": [],
+      "recordCount": 0,
+      "pageCount": 0
+    }
+  },
+  "mainMenu": {
+    "expandedItems": [],
+    "isExpanded": true
+  },
+  "masterData": {
+    "expandedItems": [],
+    "items": []
+  },
+  "modalDialog": {
+    "cancelLabel": null,
+    "customActions": null,
+    "isVisible": false,
+    "msg": null,
+    "okLabel": null,
+    "onConfirm": null,
+    "showCancel": true,
+    "title": null,
+    "width": null
+  },
+  "toastNotification": {
+    "isVisible": false,
+    "msg": null,
+    "type": null
+  },
+  "security": {
+    "allPermissions": [],
+    "allRoles": [],
+    "allUsers": []
+  },
+  "user": {
+    "account": {
+      "authToken": null,
+      "avatarUrl": null,
+      "email": null,
+      "name": null,
+      "permissions": [],
+      "roles": [],
+      "userId": null
+    },
+    "languageCode": "en",
+    "rememberMe": true
+  }
+}

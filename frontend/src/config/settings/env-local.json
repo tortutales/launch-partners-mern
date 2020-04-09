@@ -1,0 +1,9 @@
+{
+  "appName": "BestWebFirms (local)",
+  "environment": {
+    "name": "local"
+  },
+  "services": {
+    "root": "https://localhost:44395"
+  }
+}
