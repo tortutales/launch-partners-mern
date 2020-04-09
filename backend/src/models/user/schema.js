@@ -19,20 +19,20 @@ const UsersSchema = new Schema({
         type: String
     },
     email: {
-        required: true,
+        required: false,
         type: String,
         unique: true
     },
     password: {
-        required: true,
+        required: false,
         type: String
     },
     name: {
-        required: true,
+        required: false,
         type: String
     },
     username: {
-        required: true,
+        required: false,
         type: String,
         unique: true
     }
