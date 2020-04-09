@@ -1,0 +1,45 @@
+{
+    "users": [
+        {
+            "userId": 1,
+            "name": "TATIANA OCAMPO",
+            "email": "tocampo@celerik.com",
+            "avatarUrl": null
+        },
+        {
+            "userId": 2,
+            "name": "ANDRÉS ESPINOSA",
+            "email": "aespinosa@celerik.com",
+            "avatarUrl": "http://www.celerik.com/wp-content/uploads/2017/09/andres.jpg"
+        },
+        {
+            "userId": 3,
+            "name": "DANIEL GONZÁLEZ",
+            "email": "dgonzalez@celerik.com",
+            "avatarUrl": "http://www.celerik.com/wp-content/uploads/2017/09/dani-1.jpg"
+        },
+        {
+            "userId": 4,
+            "name": "JUAN CUARTAS",
+            "email": "jcuartas@celerik.com"
+        },
+        {
+            "userId": 5,
+            "name": "JUAN ESTRADA",
+            "email": "jestrada@celerik.com",
+            "avatarUrl": null
+        },
+        {
+            "userId": 6,
+            "name": "PABLO LIZCANO",
+            "email": "jgonzalez@celerik.com",
+            "avatarUrl": "http://www.celerik.com/wp-content/uploads/2017/09/juanpa.png"
+        },
+        {
+            "userId": 7,
+            "name": "JOSE RIOS",
+            "email": "jrios@celerik.com",
+            "avatarUrl": null
+        }
+    ]
+}
