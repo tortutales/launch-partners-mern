@@ -36,7 +36,7 @@ const UsersSchema = new Schema({
         type: String,
         unique: true
     }
-});
+}, { collection: 'user' });
 
 /**
  * Delete password from user schema, to avoid returns it to user.
